@@ -1,0 +1,25 @@
+.graph-list-container {
+  position: relative;
+  margin: 50px auto;
+  width: 80%;
+  left: 30px;
+}
+
+.graph-list-graph {
+  width: 200px;
+  height: 300px;
+  background: white;
+  box-shadow: 0 0 10px grey;
+  float: left;
+  margin: 0 26.8px;
+  margin-bottom: 26.8px;
+  border-radius: 5px;
+}
+
+.graph-list-delete-graph {
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+  float: right;
+  cursor: pointer;
+}

@@ -1,0 +1,32 @@
+.sidebar {
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 100%;
+  position: fixed;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+
+  background: #bfd255; /* Old browsers */
+  background: -moz-linear-gradient(left, #bfd255 0%, #72aa00 0%, #8eb92a 50%, #9ecb2d 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #bfd255 0%,#72aa00 0%,#8eb92a 50%,#9ecb2d 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #bfd255 0%,#72aa00 0%,#8eb92a 50%,#9ecb2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfd255', endColorstr='#9ecb2d',GradientType=1 ); /* IE6-9 */
+}
+
+.sidebar-button {
+  width: 45px;
+  height: 45px;
+  margin: 10px auto;
+  /*border: 1px solid rgb(209, 209, 209);*/
+  border-radius: 5px;
+
+  background: #536DFE;
+  transition: box-shadow 0.2s;
+
+
+}
+
+.sidebar-button:hover {
+  box-shadow: inset 0 0 10px white;
+}
