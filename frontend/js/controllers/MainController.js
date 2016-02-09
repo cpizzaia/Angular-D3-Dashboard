@@ -7,7 +7,7 @@ app.controller('MainController', ['$scope', 'emails', function($scope, emails) {
     });
   });
 
-  $scope.Average = function(period) {
+  $scope.average = function(period) {
     var emails = $scope.emails;
     var delivered = 0;
     var read = 0;
@@ -41,10 +41,31 @@ app.controller('MainController', ['$scope', 'emails', function($scope, emails) {
 
   };
 
+  $scope.percents = function() {
+    var emails = $scope.emails;
+    var read = 0;
+    var unread = 0;
+    var total = 0;
+
+    for (var i = 0; i < emails.length; i++) {
+      unread += emails[i].newsletter.email_delivered - emails[i].newsletter.email_read;
+      read += emails[i].newsletter.email_read;
+      total += emails[i].newsletter.email_delivered;
+    }
+    var unread_percent = Math.round((unread/total) * 100);
+    var read_percent = Math.round((read/total) * 100);
+    return [unread_percent, read_percent];
+  };
+
 
   $scope.graphs = [];
   $scope.addGraph = function(type) {
-    $scope.graphs.push({type: type, data: $scope.Average(type)});
+    if (type !== "pie") {
+      $scope.graphs.push({type: type, data: $scope.average(type)});
+    } else {
+      $scope.graphs.push({type: type, data: $scope.percents()});
+    }
+
   };
 
 }]);
