@@ -1,5 +1,6 @@
 <ul class="graph-list-container group">
   <li class="graph-list-graph" ng-repeat="graph in graphs">
-    <img class="graph-list-delete-graph" src="/images/delete.png" ng-click="removeGraph(item)"/>
+    <img class="graph-list-delete-graph" src="/images/delete.png" ng-click="graphs.splice($index, 1)"/>
+    <graph type="{{graph.type}}" dataset="{{graph.data}}" id="graph{{$index}}"></graph>
   </li>
 </ul>

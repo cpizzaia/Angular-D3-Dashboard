@@ -3,7 +3,14 @@ app.directive('graphList', function() {
     transclude: 'element',
     restrict: 'EA',
     replace: true,
-    scope: true,
+    scope: {
+      graphs: '='
+    },
     templateUrl: 'js/directives/graphList.html',
+    link: function(scope, element, attrs) {
+      scope.$watch(attrs.emails, function(emails) {
+
+      });
+    }
   };
 });
